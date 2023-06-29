@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "cookiecutter-pypackage"
-version = "0.1.0"
-description = ""
-authors = ["Your Name <you@example.com>"]
+name = "{{ cookiecutter.project_slug }}"
+version = "{{ cookiecutter.version }}"
+description = "{{ cookiecutter.project_short_description }}"
+authors = ["{{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>"]
 readme = "README.md"
-packages = [{ include = "cookiecutter_pypackage", from = "src" }]
+packages = [{ include = "{{ cookiecutter.project_slug }}", from = "src" }]
 
 [tool.poetry.dependencies]
 python = ">=3.8.1"
@@ -32,7 +32,7 @@ profile = "black"
 addopts = [
   "--strict-config",
   "--strict-markers",
-  "--cov=cookiecutter_pypackage"
+  "--cov={{ cookiecutter.project_slug }}"
 ]
 xfail_strict = true
 

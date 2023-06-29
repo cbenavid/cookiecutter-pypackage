@@ -22,6 +22,16 @@ repos:
     hooks:
       - id: flake8
 
+  - repo: local
+    hooks:
+      - id: mypy
+        name: mypy
+        entry: python -m
+        args:
+          - mypy
+        language: system
+        types: [python]
+
   - repo: https://github.com/commitizen-tools/commitizen
     rev: 3.5.2
     hooks:
